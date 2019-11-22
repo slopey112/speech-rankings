@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>i'm bad at speech</title>
+		<meta charset="utf-8"></meta>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+		<link rel="stylesheet" href="styles/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Oswald&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	</head>
+	<body>
+		<div id="main">
+			<h1>i'm bad at speech</h1>
+			<h3>calculate the worse rank you can get to break</h3>
+			<button type="button" class="btn btn-outline-dark">Begin</button>
+		</div>
+		<div id="main2" style="display: none">
+			<form id="forms">
+				<div class="form form-group">
+					<label for="competitors">Number of Competitors</label>
+					<input type="number" min=1 class="form-control" id="competitors">
+				</div>
+				<div class="form form-group">
+					<label for="rooms">Number of Rooms</label>
+					<input type="number" min=1 class="form-control" id="rooms">
+				</div>
+				<div class="form form-group">
+					<label for="rounds">Number of Rounds</label>
+					<input type="number" min=1 class="form-control" id="rounds">
+				</div>
+				<div class="form form-group">
+					<label for="finalists">Number of Finalists</label>
+					<input type="number" min=1 class="form-control" id="finalists">
+				</div>
+			</form>
+			<button id="submit" type="button" class="btn btn-outline-dark">Submit</button>
+		</div>
+		<div id="main3" style="display: none">
+			<p>The breakpoint is <span class="num" id="bp"></span> and the worst ranks are <span class="num" id="ranks"></span>.</p>
+	</body>
+	<script src="scripts/script.js"></script>
+</html
