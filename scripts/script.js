@@ -7,7 +7,7 @@ btn.onclick = function() {
 		let forms = document.getElementById("main2");
 		forms.style.display = "flex";
 		forms.classList.add("animated", "fadeInUp");
-	});
+	}, {once: true});
 };
 
 let submit = document.getElementById("submit");
@@ -36,7 +36,7 @@ submit.onclick = function() {
 		}
 	}
 	function mine(value, moves, specMove) {
-		if (dp[value][moves][specMove][0] != -1) return dp[value][moves][specMove][0];
+		if (dp[value][moves][specMove][0] !== -1) return dp[value][moves][specMove][0];
 		if (moves === 0) return value;
 		t = []
 		for (let i = 1; i <= bp - value && i <= inRoom; i++) t.push(i);
@@ -61,21 +61,36 @@ submit.onclick = function() {
 	let current = 0;
 	let ranks = [];
 	let pos = [0, rounds, remainder];
-	while (pos != 0) {
-		ranks.push(dp[pos[0]][pos[1]][pos[2]][1][0] - current)
+	while (pos !== 0) {
+		ranks.push(dp[pos[0]][pos[1]][pos[2]][1][0] - current);
 		current = dp[pos[0]][pos[1]][pos[2]][1][0];
 		pos = dp[pos[0]][pos[1]][pos[2]][1];
 	}
-	ranks.pop()
+	ranks.pop();
 	console.log(ranks);
 	document.getElementById("bp").innerText = answer;
-	document.getElementById("ranks").innerText = ranks;
+	document.getElementById("ranks").innerText = ranks.join(", ");
 	let main = document.getElementById("main2");
 	main.classList.add("animated", "fadeOutUp");
 	main.addEventListener("animationend", function () {
 		main.style.display = "none";
 		let main3 = document.getElementById("main3");
-		main3.style.display = "block";
+		main3.style.display = "flex";
 		main3.classList.add("animated", "fadeInUp");
-	});
-}
+	}, {once: true});
+};
+
+let back = document.getElementById("back");
+back.onclick = function () {
+	let main3 = document.getElementById("main3");
+	main3.classList.add("animated", "fadeOutUp");
+	document.getElementById("main").classList.remove("animated", "fadeOutUp", "fadeInUp");
+	document.getElementById("main2").classList.remove("animated", "fadeInUp", "fadeOutUp");
+	main3.addEventListener("animationend", function () {
+		main3.style.display = "none";
+		main3.classList.remove("animated", "fadeInUp", "fadeOutUp");
+		let main = document.getElementById("main");
+		main.style.display = "flex";
+		main.classList.add("animated", "fadeInUp")
+	}, {once: true});
+};

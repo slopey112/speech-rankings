@@ -11,6 +11,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	overflow: hidden;
 }
 
 #main {
@@ -68,4 +69,26 @@ h3 {
 }
 
 #main3 {
-	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+#main3>* {
+	margin: 30px;
+}
+
+#box {
+	width: 40vw;
+	margin: auto;
+	vertical-align: middle;
+	background-color: white;
+	border-radius: 10px;
+	padding: 20px;
+	font-size: 36px;
+}
+
+.num {
+	font-weight: bold;
+}
